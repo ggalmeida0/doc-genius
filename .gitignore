@@ -1,0 +1,23 @@
+# Env variables
+.env
+
+# Handler
+handler/node_modules
+handler/lambda_build/*
+handler/dist
+handler/lambda.logs
+handler/env/dev-env-vars.json
+
+# Infra
+infra/*.js
+!infra/jest.config.js
+infra/*.d.ts
+infra/node_modules
+infra/resources-config.ts
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# macOS
+.DS_Store

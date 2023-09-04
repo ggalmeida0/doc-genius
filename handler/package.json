@@ -1,0 +1,24 @@
+{
+  "name": "bio-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/handler.ts",
+  "scripts": {
+    "test": "echo \"Tests comming soon\" && exit 1",
+    "build": "bash -c 'npm i && tsc && zip -r lambda_build/dg_handler.zip dist node_modules package.json package-lock.json && pushd ../infra && cdk synth; popd'",
+    "start": "bash -c 'npm run build && sam local start-api -t ../infra/cdk.out/DocGeniusStack.template.json -l lambda.logs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.115",
+    "@types/node": "^20.2.5",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.7",
+    "aws-sdk": "^2.1386.0",
+    "openai": "^3.3.0"
+  }
+}
